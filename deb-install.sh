@@ -4,6 +4,9 @@ if [ "$(id -u)" != "0" ]; then
 	echo "This script must be run as root"
 	exit 1;
 fi
+
+echo " >>> Updating repositories"
+apt update
 echo " >>> Installing apt packages"
 apt install -y software-properties-common gnupg wget
 echo " >>> Add non-free repositories"
